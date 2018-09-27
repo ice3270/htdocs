@@ -1,0 +1,1 @@
+a:6:{i:0;s:2:"id";i:1;s:10:"serve_icon";i:2;s:12:"serve_header";i:3;s:10:"serve_text";s:3:"_pk";s:2:"id";s:5:"_type";a:4:{s:2:"id";s:7:"int(11)";s:10:"serve_icon";s:11:"varchar(32)";s:12:"serve_header";s:12:"varchar(128)";s:10:"serve_text";s:13:"varchar(4096)";}}

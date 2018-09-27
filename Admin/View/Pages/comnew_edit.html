@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Notifications</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!-- VENDOR CSS -->
+	<link rel="stylesheet" href="__ROOT__/Admin/assets/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="__ROOT__/Admin/assets/vendor/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="__ROOT__/Admin/assets/vendor/linearicons/style.css">
+	<link rel="stylesheet" href="__ROOT__/Admin/assets/vendor/toastr/toastr.min.css">
+	<!-- MAIN CSS -->
+	<link rel="stylesheet" href="__ROOT__/Admin/assets/css/main.css">
+	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+	<link rel="stylesheet" href="__ROOT__/Admin/assets/css/demo.css">
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<!-- ICONS -->
+	<link rel="shortcut icon" href="__ROOT__/Admin/assets/img/favicon.png">
+	<script src="__ROOT__/Admin/assets/vendor/jquery/jquery.min.js"></script>
+	<style>
+		p{text-indent: 2em;}
+	</style>
+</head>
+
+<body>
+<!-- WRAPPER -->
+<div id="wrapper">
+	<!-- 导航栏 -->
+	<include file="./Admin/View/header.html" />
+	<!-- END 导航栏杆 -->
+	<!--//左侧导航栏-->
+	<include file="./Admin/View/leftNav.html" />
+	<!-- MAIN -->
+	<div class="main">
+		<!--//主窗口部分-->
+		<div id="disNewEdit" style="display: none;">
+			<h3 style="margin-left: 40px;">{$edit|default="添加"}公司动态</h3>
+			<form action="__ROOT__/index.php/Admin/EditPages/{$do|default='newAdd'}" method="post" enctype="multipart/form-data">
+				<eq name="do" value="newUpdate">
+					<input type="hidden" name="id" value="{$n_info.id}">
+				</eq>
+				<table class="table table-hover" style="width: 80%;margin-left: 40px;">
+					<tr>
+						<th>动态配图：</th>
+						<td><input type="file" name="imgNew"> 尺寸：宽度-458px 高度等比例缩放 {$prompt|default=""}</td>
+					</tr>
+					<tr>
+						<th>动态日期：</th>
+						<td>
+							<input type="number" name="year" max="9999" min="0" value="{$n_info.year|default=''}"> 年
+							<input type="number" name="month" max="12" min="1" value="{$n_info.month|default=''}"> 月
+							<input type="number" name="day" max="31" min="1" value="{$n_info.day|default=''}"> 日
+						</td>
+					</tr>
+					<tr>
+						<th>动态标题：</th>
+						<td><input type="text" name="header" value="{$n_info.header|default=''}"></td>
+					</tr>
+					<tr>
+						<th>动态描述：</th>
+						<td>
+							<textarea name="contents" id="" cols="100" rows="5">{$n_info.contents|default=""}</textarea>
+							<br>
+							另起一自然段使用：“&lt;p&gt;” 作为分段落隔符 （引号内复制粘贴即可）
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<input type="submit" value="{$update|default="添加"}动态信息"> |
+							<input type="reset" value="重置编辑">
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- END MAIN -->
+<div class="clearfix"></div>
+<footer>
+	<div class="container-fluid">
+		<p class="copyright">
+			<a href="http://www.spasc.cn/" title="沈阳价格价业鉴证服务中心">沈阳价格价业鉴证服务中心 - Shenyang Price Assessment Service Center</a>
+		</p>
+	</div>
+</footer>
+</div>
+<!-- END WRAPPER -->
+<!-- Javascript -->
+<script src="__ROOT__/Admin/assets/vendor/jquery/jquery.min.js"></script>
+<script src="__ROOT__/Admin/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="__ROOT__/Admin/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="__ROOT__/Admin/assets/vendor/toastr/toastr.min.js"></script>
+<script src="__ROOT__/Admin/assets/scripts/klorofil-common.js"></script>
+<script>
+    $(function(){
+        $(".dropdown").removeClass("active");
+        $("#eNew").addClass("active");
+        $("#disNewEdit").slideDown("slow");
+    });
+</script>
+</body>
+
+</html>

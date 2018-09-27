@@ -1,0 +1,1 @@
+a:8:{i:0;s:2:"id";i:1;s:8:"com_text";i:2;s:11:"com_address";i:3;s:10:"com_postal";i:4;s:7:"com_tel";i:5;s:9:"com_email";s:3:"_pk";s:2:"id";s:5:"_type";a:6:{s:2:"id";s:7:"int(11)";s:8:"com_text";s:13:"varchar(1024)";s:11:"com_address";s:12:"varchar(512)";s:10:"com_postal";s:11:"varchar(32)";s:7:"com_tel";s:11:"varchar(32)";s:9:"com_email";s:11:"varchar(64)";}}

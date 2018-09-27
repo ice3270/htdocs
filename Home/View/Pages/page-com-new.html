@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>沈阳市价业价格鉴证服务中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Bootstrap Business Template">
+    <meta name="author" content="The Develovers">
+    <!-- CSS -->
+    <link href="__ROOT__/Home/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+    <!-- IE 9 Fallback-->
+    <!--[if IE 9]>
+		<link href="__ROOT__/Home/assets/css/ie.css" rel="stylesheet">
+	<![endif]-->
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300' rel='stylesheet' type='text/css'>
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="__ROOT__/Home/assets/ico/favicon.png">
+    <style>
+        p{
+            text-indent: 2em;  /*em是相对单位，2em即现在一个字大小的两倍*/
+        }
+    </style>
+</head>
+
+<body>
+    <!-- WRAPPER -->
+    <div class="wrapper">
+        <!-- 导航条 -->
+        <include file="./Home/View/nav-home.html" />
+        <!-- END 导航条 -->
+
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- BLOG ENTRIES -->
+                        <div class="blog medium-thumbnail margin-bottom-30px">
+                            <foreach name="n_info" item="v" key="k">
+                            <!-- blog post -->
+                            <article class="entry-post">
+                                <header class="entry-header">
+                                    <h2 class="entry-title">{$v.header}</h2>
+                                </header>
+                                <div class="entry-content clearfix">
+                                    <div class="row">
+                                        <if condition="$k % 2 eq 0">
+                                        <div class="col-sm-5">
+                                            <figure class="featured-image">
+                                                <div class="post-date-info clearfix">
+                                                    <span class="post-year">{$v.year}年</span>
+                                                    <span class="post-month">{$v.month}月</span>
+                                                    <span class="post-date">{$v.day}日</span>
+                                                </div>
+                                                <img src="__ROOT__/Uploads/Images/ComNew/{$v.imgpath}" class="img-responsive" alt="featured-image" height="100px"/>
+                                            </figure>
+                                        </div>
+                                        <div class="col-sm-7">
+                                            <div class="excerpt">
+                                                <p>{$v.contents}</p>
+                                            </div>
+                                        </div>
+                                        <else />
+                                        <div class="col-sm-7">
+                                            <div class="excerpt">
+                                                <p>{$v.contents}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <figure class="featured-image">
+                                                <a href="blog-single.html">
+                                                    <div class="post-date-info clearfix">
+                                                        <span class="post-year">{$v.year}年</span>
+                                                        <span class="post-month">{$v.month}月</span>
+                                                        <span class="post-date">{$v.day}日</span>
+                                                    </div>
+                                                    <img src="__ROOT__/Uploads/Images/ComNew/{$v.imgpath}?ran={$ran}" class="img-responsive" alt="featured-image" />
+                                                </a>
+                                            </figure>
+                                        </div>
+                                        </if>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- end blog post -->
+                            <hr />
+                            </foreach>
+
+                           <!--============================================================-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+        <!-- 页脚部分 -->
+        <include file="./Home/View/footer-home.html" />
+        <!-- END 页脚部分 -->
+    </div>
+    <!-- END WRAPPER -->
+    <!-- JAVASCRIPTS -->
+    <script src="__ROOT__/Home/assets/js/jquery-2.1.1.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/bootstrap.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/plugins/fitvids/jquery.fitvids.js"></script>
+    <script src="__ROOT__/Home/assets/js/repute-scripts.js"></script>
+    <script>
+        $(function() {
+            $(".dropdown").removeClass("active");
+            $("#pageDown").addClass("active");
+        });
+    </script>
+</body>
+
+</html>

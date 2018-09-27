@@ -1,0 +1,76 @@
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <!-- COLUMN 1 -->
+                <a href="__ROOT__">
+                    <img src="__ROOT__/Home/assets/img/logo/LogoTestHeader.png" class="logo" alt="Repute" style="width: 220px;">
+                </a>
+                <div style="height: 80px; overflow:hidden; margin-bottom: 10px;">
+                    <p>{$com_info.com_text}</p>
+                </div>
+                <div>
+                    <div style="height: 180px;float: left;">
+                        <div style="margin:auto">
+                            <h3 style="font-size: 20px;" class="footer-heading">关注我们</h3>
+                            <span><li class="fa fa-hand-o-right fa-5x"></li></span>
+                        </div>
+                    </div>
+                    <div style="width: 180px; height: 180px; margin-left: 40px; float: left;">
+                        <img src="__ROOT__/Uploads/Images/erwei.png?ran={$ran}" width="180" alt="二维码">
+                    </div>
+                </div>
+                <!-- END COLUMN 1 -->
+            </div>
+
+            <div class="col-md-4">
+                <!-- COLUMN 2 -->
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h3 class="footer-heading">站内链接</h3>
+                        <ul class="list-unstyled footer-nav">
+                            <foreach name="link_in_info" item="v" >
+                                <!--<li><a href="{$v.link_url}">{$v.link_name}</a></li>-->
+                                <li><a href="__ROOT__/{$v.link_url}">{$v.link_name}</a></li>
+                            </foreach>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6">
+                        <h3 class="footer-heading">相关链接</h3>
+                        <ul class="list-unstyled footer-nav">
+                            <foreach name="link_out_info" item="v" >
+                                <li><a href="http://{$v.link_url}">{$v.link_name}</a></li>
+                            </foreach>
+                        </ul>
+                    </div>
+                    <div class="col-xs-6" style="width: 400px;">
+                        <h3 class="footer-heading">邮寄地址及联系方式</h3>
+                        <ul class="list-unstyled">
+                            <li>通讯地址：{$com_info.com_address}</li>
+                            <li>邮政编码：{$com_info.com_postal}</li>
+                            <li>办公电话：{$com_info.com_tel}</li>
+                            <li>Email：{$com_info.com_email}</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- END COLUMN 2 -->
+            </div>
+
+            <div class="col-md-4">
+                <h3 class="footer-heading">公司地址</h3>
+                <p style="text-indent: 0px;">{$com_info.com_address}</p>
+                <div id="allmap">
+                    <!--<iframe src="__ROOT__/Home/View/Index/baiduMap.html" height="261px" width="396">-->
+                    <iframe src="__ROOT__/Home/View/Index/baiduMap.html" height="261px" width="100%">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- COPYRIGHT -->
+    <div class="text-center copyright">
+        <a href="http://www.spasc.cn/" title="沈阳价格价业鉴证服务中心">沈阳价格价业鉴证服务中心 - Shenyang Price Assessment Service Center </a> -
+        <a href="__ROOT__/index.php/Admin/"> 后台管理登录</a>
+    </div>
+    <!-- END COPYRIGHT -->
+</footer>

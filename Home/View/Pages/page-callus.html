@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>沈阳市价业价格鉴证服务中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Bootstrap Business Template">
+    <meta name="author" content="The Develovers">
+    <!-- CSS -->
+    <link href="__ROOT__/Home/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+    <!-- IE 9 Fallback-->
+    <!--[if IE 9]>
+		<link href="__ROOT__/Home/assets/css/ie.css" rel="stylesheet">
+	<![endif]-->
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300' rel='stylesheet' type='text/css'>
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="__ROOT__/Home/assets/ico/favicon.png">
+    <script src="__ROOT__/Home/assets/js/jquery-2.1.1.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/bootstrap.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/plugins/google-map/google-map.js"></script>
+    <script src="__ROOT__/Home/assets/js/repute-scripts.js"></script>
+</head>
+
+<body>
+    <!-- WRAPPER -->
+    <div class="wrapper">
+        <!-- 导航条    -->
+        <include file="./Home/View/nav-home.html" />
+        <!-- END 导航条 -->
+
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2>联系我们</h2>
+                        <br>
+                        <!-- CONCTACT FORM -->
+                        <div class="contact-form-wrapper">
+                            <form action="__ROOT__/Home/Pages/subCallus" id="contact-form" method="post" class="form-horizontal margin-bottom-30px" role="form">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="contact-name" name="name" placeholder="姓名*" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <input type="email" class="form-control" id="contact-email" name="email" placeholder="Email*" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <input type="text" class="form-control" id="contact-subject" name="subject" placeholder="主题">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-message" class="control-label sr-only">Message</label>
+                                    <div class="col-sm-12">
+                                        <textarea class="form-control" id="contact-message" name="message" rows="5" cols="30" placeholder="详细描述" required></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-sm-12">
+                                        <button id="submit-button" type="submit" class="btn btn-primary"><i class="fa loading-icon"></i> <span>留言给我们</span></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- END CONCTACT FORM -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+        <!-- 页脚部分 -->
+        <include file="./Home/View/footer-home.html" />
+        <!-- END 页脚部分 -->
+    </div>
+    <!-- END WRAPPER -->
+    <!-- JAVASCRIPTS -->
+    <script>
+        $(function() {
+            $(".dropdown").removeClass("active");
+        });
+    </script>
+</body>
+
+</html>

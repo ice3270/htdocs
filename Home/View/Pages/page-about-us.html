@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>沈阳市价业价格鉴证服务中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Bootstrap Business Template">
+    <meta name="author" content="The Develovers">
+    <!-- CSS -->
+    <link href="__ROOT__/Home/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+    <!-- IE 9 Fallback-->
+    <!--[if IE 9]>
+		<link href="__ROOT__/Home/assets/css/ie.css" rel="stylesheet">
+	<![endif]-->
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300' rel='stylesheet' type='text/css'>
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="__ROOT__/Home/assets/ico/favicon.png">
+    <style>
+        p{
+            text-indent: 2em;  /*em是相对单位，2em即现在一个字大小的两倍*/
+        }
+    </style>
+</head>
+
+<body>
+    <!-- WRAPPER -->
+    <div class="wrapper">
+        <!-- 导航栏 -->
+        <include file="./Home/View/nav-home.html" />
+        <!-- END 导航条 -->
+
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+            <div class="container">
+                <section>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="section-heading">{$us_info[0].header}</h2>
+                            <p>{$us_info[0].contents}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="__ROOT__/Uploads/Images/Company_show/abus.png" alt="" width="555" height="280">
+                        </div>
+                    </div>
+                    <br>
+                    <hr>
+                    <h2 class="section-heading">{$us_info[1].header}</h2>
+                    <p class="lead" style="text-indent: 0px;"><span class="dropcap dropcap-big"> > </span>{$us_info[1].contents}</p>
+                    <br>
+                    <h2 class="section-heading">{$us_info[2].header}</h2>
+                    <p class="lead" style="text-indent: 0px;"><span class="dropcap dropcap-big"> > </span>{$us_info[2].contents}</p>
+                    <hr>
+                </section>
+                <h2 class="section-heading">我们的团队</h2>
+                <!-- TEAM -->
+                <section class="team">
+                    <div class="section-content">
+                        <foreach name="team_info" item="v" key="k">
+                            <if condition="$k % 2 eq 0">
+                                <div class="col-md-5" style="height: 245px">
+                            <else />
+                                <div class="col-md-5 col-md-offset-2" style="height: 245px">
+                            </if>
+                                    <div class="team-member media">
+                                        <img width="120px" height="120px" src="__ROOT__/Uploads/Images/team/{$v.imgpath}" class="media-object img-circle pull-left" alt="" />
+                                        <div class="media-body">
+                                            <h3 class="media-heading team-name">{$v.name}</h3>
+                                            <strong>{$v.post}</strong>
+                                            <hr class="pull-left">
+                                            <div class="clearfix"></div>
+                                            <p>{$v.about}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                        </foreach>
+                        <if condition="$k % 2 eq 0">
+                            <div class="col-md-5 col-md-offset-2">
+                                <div class="team-member media">
+                                    <img width="120px" height="120px" src="__ROOT__/Uploads/Images/team/shenlue.png" class="media-object img-circle pull-left" alt="" />
+                                    <div class="media-body">
+                                        <h3 class="media-heading team-name">More</h3>
+                                        <strong>. . . . . .</strong>
+                                        <hr class="pull-left">
+                                        <div class="clearfix"></div>
+                                        <p style="text-indent: 0px;">. . . . . .</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </if>
+                    </div>
+                </section>
+                <!-- END TEAM -->
+
+                <!-- OUR CLIENTS -->
+                <section class="clients no-margin">
+                    <div class="container">
+                        <h2 class="section-heading">合作单位</h2>
+                        <ul class="list-inline list-client-logo">
+                            <foreach name="data" item="v" key="k">
+                                <foreach name="v" item="vv">
+                                    <img src="__ROOT__/Uploads/Images/FriendCom/{$vv.imgpathname}"  width="60px" height="60px" style="margin: 15px">
+                                </foreach>
+                            </foreach>
+                        </ul>
+                    </div>
+                </section>
+                <!-- END OUR CLIENTS -->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+        <!-- 页脚部分 -->
+        <include file="./Home/View/footer-home.html" />
+        <!-- END 页脚部分 -->
+    </div>
+    <!-- END WRAPPER -->
+    <!-- JAVASCRIPTS -->
+    <script src="__ROOT__/Home/assets/js/jquery-2.1.1.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/bootstrap.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/plugins/fitvids/jquery.fitvids.js"></script>
+    <script src="__ROOT__/Home/assets/js/repute-scripts.js"></script>
+    <script>
+        $(function() {
+            $(".dropdown").removeClass("active");
+            $("#pageAbout").addClass("active");
+        });
+    </script>
+</body>
+
+</html>

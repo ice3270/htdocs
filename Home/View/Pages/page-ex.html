@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>沈阳市价业价格鉴证服务中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Bootstrap Business Template">
+    <meta name="author" content="The Develovers">
+    <!-- CSS -->
+    <link href="__ROOT__/Home/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+    <!-- IE 9 Fallback-->
+    <!--[if IE 9]>
+		<link href="__ROOT__/Home/assets/css/ie.css" rel="stylesheet">
+	<![endif]-->
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300' rel='stylesheet' type='text/css'>
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="__ROOT__/Home/assets/ico/favicon.png">
+    <style>
+        p{
+            text-indent: 2em;  /*em是相对单位，2em即现在一个字大小的两倍*/
+        }
+    </style>
+    <script src="__ROOT__/Home/assets/js/jquery-2.1.1.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/bootstrap.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/plugins/isotope/isotope.pkgd.js"></script>
+    <script src="__ROOT__/Home/assets/js/repute-scripts.js"></script>
+</head>
+
+<body>
+    <!-- WRAPPER -->
+    <div class="wrapper">
+        <!-- 导航条 -->
+        <include file="./Home/View/nav-home.html" />
+        <!-- END 导航条 -->
+
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+            <div class="container">
+                <!-- PORTFOLIO ITEM WRAPPER -->
+                <div class="portfolio-item-wrapper">
+                    <ul class="portfolio-item-list portfolio-isotope portfolio-nospace list-col-4">
+                        <foreach name="e_info" item="v" key="k">
+                            <li class="portfolio-item design">
+                                <div class="overlay"></div>
+                                <div class="info">
+                                    <h4 class="title">{$v.header}</h4>
+                                    <p class="brief-description">{$v.title}</p>
+                                    <!--<a href="#" class="btn">查看详情</a>-->
+                                </div>
+                                <div class="media-wrapper">
+                                    <img src="__ROOT__/Uploads/Images/portfolio/{$v.imgpath}" width="285px" height="285px">
+                                </div>
+                            </li>
+                        </foreach>
+                    </ul>
+                </div>
+                <!-- END PORTFOLIO ITEM WRAPPER -->
+            </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+        <!-- 页脚部分 -->
+        <include file="./Home/View/footer-home.html" />
+        <!-- END 页脚部分 -->
+    </div>
+    <!-- END WRAPPER -->
+    <!-- JAVASCRIPTS -->
+    <script>
+        $(function() {
+            $(".dropdown").removeClass("active");
+            $("#pageEx").addClass("active");
+        });
+    </script>
+</body>
+
+</html>

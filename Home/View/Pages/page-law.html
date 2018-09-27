@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>沈阳市价业价格鉴证服务中心</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Bootstrap Business Template">
+    <meta name="author" content="The Develovers">
+    <!-- CSS -->
+    <link href="__ROOT__/Home/assets/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="__ROOT__/Home/assets/css/my-custom-styles.css" rel="stylesheet" type="text/css">
+    <!-- IE 9 Fallback-->
+    <!--[if IE 9]>
+		<link href="__ROOT__/Home/assets/css/ie.css" rel="stylesheet">
+	<![endif]-->
+    <!-- GOOGLE FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400italic,400,600,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,300italic,400italic,700,400,300' rel='stylesheet' type='text/css'>
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="__ROOT__/Home/assets/ico/favicon.png">
+    <style>
+        p{
+            text-indent: 2em;  /*em是相对单位，2em即现在一个字大小的两倍*/
+        }
+    </style>
+</head>
+
+<body>
+    <!-- WRAPPER -->
+    <div class="wrapper">
+        <!-- 导航条 -->
+        <include file="./Home/View/nav-home.html" />
+        <!-- END 导航条 -->
+
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <!-- BLOG SINGLE -->
+                        <div class="blog single full-thumbnail">
+                            <!-- blog post -->
+                            <article class="entry-post">
+                                <header class="entry-header">
+                                    <h2 class="entry-title">{$l_info.header}</h2>
+                                </header>
+                                <div class="entry-content clearfix">
+                                    <figure class="featured-image">
+                                        <img src="__ROOT__/Uploads/Images/Law/law.png" class="img-responsive" alt="featured-image" width="848px"/>
+                                    </figure>
+                                    <div class="excerpt">
+                                        <p>{$l_info.contents}</p>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- end blog post -->
+                            <hr>
+                            <!-- social sharing -->
+                        </div>
+                        <!-- END BLOG SINGLE -->
+                    </div>
+                    <div class="col-md-3">
+                        <!-- SIDEBAR -->
+                        <!-- search form -->
+                        <div class="widget">
+                            <form action="#" class="form-search">
+                                <div class="input-group">
+                                    <input id="sInfo" type="text" class="form-control" placeholder="输入您要搜索的关键词">
+                                    <span class="input-group-btn">
+                                        <button id="sBtn" class="btn btn-primary" type="button">搜索</button>
+                                    </span>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- end search form -->
+                        <!-- categories -->
+                        <div class="widget">
+                            <h4 class="widget-title">文件列表</h4>
+                            <ul class="list-unstyled category-list">
+                                <foreach name="lf_info" item="v">
+                                    <a href="__ROOT__/Admin/EditPages/lawFileDownload?fName={$v.filename}">
+                                        <li>
+                                            <span class="fa-stack fa-lg">
+                                                <i class="fa fa-file-text-o fa-stack-1x"></i>
+                                            </span>
+                                            {$v.filename}
+                                        </li>
+                                    </a>
+                                </foreach>
+                            </ul>
+                        </div>
+                        <!-- end categories -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END PAGE CONTENT -->
+        <!-- 页脚部分 -->
+        <include file="./Home/View/footer-home.html" />
+        <!-- END 页脚部分 -->
+    </div>
+    <!-- END WRAPPER -->
+    <!-- JAVASCRIPTS -->
+    <script src="__ROOT__/Home/assets/js/jquery-2.1.1.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/bootstrap.min.js"></script>
+    <script src="__ROOT__/Home/assets/js/repute-scripts.js"></script>
+    <script>
+        $(function() {
+            $(".dropdown").removeClass("active");
+            $("#pageDown").addClass("active");
+
+            $("#sBtn").click(function () {
+                var info = $("#sInfo").val();
+                window.location.replace("__ROOT__/Home/Pages/law?info="+info);
+            });
+        });
+    </script>
+</body>
+
+</html>
